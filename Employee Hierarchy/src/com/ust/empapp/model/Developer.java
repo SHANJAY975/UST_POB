@@ -1,5 +1,16 @@
+package com.ust.empapp.model;
+
 public class Developer extends  Employee{
-    String programmingLanguage;
+    private String programmingLanguage;
+
+    public String getProgrammingLanguage() {
+        return programmingLanguage;
+    }
+
+    public void setProgrammingLanguage(String programmingLanguage) {
+        this.programmingLanguage = programmingLanguage;
+    }
+
     public Developer(String name, int employeeID, Double salary, String programmingLanguage) {
         super(name, employeeID, salary);
         this.programmingLanguage = programmingLanguage;
@@ -9,4 +20,5 @@ public class Developer extends  Employee{
         System.out.println("Programming Language: "+programmingLanguage);
         System.out.println();
     }
+
 }
