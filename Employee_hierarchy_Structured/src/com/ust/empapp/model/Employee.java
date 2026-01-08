@@ -1,6 +1,6 @@
 package com.ust.empapp.model;
 
-public abstract class  Employee {
+public abstract class  Employee  implements Comparable<Employee> {
     private  int employeeId;
     private String name;
     private double salary;
@@ -49,5 +49,10 @@ public abstract class  Employee {
         System.out.println("ID : "+employeeId);
         System.out.println("Name : "+name);
         System.out.println("Salary "+salary);
+    }
+
+    @Override
+    public int compareTo(Employee emp) {
+        return Double.compare(this.getSalary() , emp.getSalary());
     }
 }

@@ -20,12 +20,12 @@ public class Main {
         var emp = employeeRepo.findEmployee(101);
         System.out.println(emp);
 
-        var emps = employeeRepo.getAllEmployees();
-        for(int i=0; i<EmployeeRepositoryImpl.current; i++){
-            if(emps[i]!=null) {
-                emps[i].displayDetails();
-            }
-        }
+//        var emps = employeeRepo.getAllEmployees();
+//        for(int i=0; i<EmployeeRepositoryImpl.current; i++){
+//            if(emps[i]!=null) {
+//                emps[i].displayDetails();
+//            }
+//        }
 
     }
 }
