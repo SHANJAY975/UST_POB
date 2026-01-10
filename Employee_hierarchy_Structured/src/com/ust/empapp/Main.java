@@ -16,7 +16,7 @@ public class Main {
         employeeRepo.saveEmployee(emp1);
         employeeRepo.saveEmployee(emp2);
 
-        employeeRepo.deleteEmployee(101);
+//        employeeRepo.deleteEmployee(101);
         var emp = employeeRepo.findEmployee(101);
         System.out.println(emp);
 
