@@ -38,4 +38,14 @@ public class ProductController {
         return service.saveProduct(product);
     }
 
+    @GetMapping("/product/{name}")
+    public Product getProductByName(@PathVariable String name){
+        return service.getProductByName(name);
+    }
+
+    @GetMapping("/product/{min}/{max}")
+    public  List<Product> getProductInRange(@PathVariable int min, @PathVariable int max){
+        return service.getProductInRange(min, max);
+    }
+
 }

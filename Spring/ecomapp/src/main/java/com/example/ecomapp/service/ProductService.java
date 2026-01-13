@@ -2,7 +2,6 @@ package com.example.ecomapp.service;
 
 import com.example.ecomapp.model.Product;
 import com.example.ecomapp.repository.ProductRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,25 +10,32 @@ import java.util.List;
 public class ProductService {
 
 
-    private ProductRepository productRepository;
+    private ProductRepository productRepo;
 
-    public ProductService(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public ProductService(ProductRepository productRepo) {
+        this.productRepo = productRepo;
     }
 
     public Product saveProduct(Product product){
-        productRepository.saveProduct(product);
+        productRepo.saveProduct(product);
         return product;
     }
     public List<Product> getProducts(){
-        return productRepository.getProducts();
+        return productRepo.getProducts();
     }
 
     public Product getProductById(long id){
-        return  productRepository.getProductById(id);
+        return  productRepo.getProductById(id);
     }
 
     public void deleteProduct(long id){
-        productRepository.deleteProduct(id);
+        productRepo.deleteProduct(id);
+    }
+    public Product getProductByName(String name){
+        return productRepo.getProductByName(name);
+    }
+
+    public List<Product> getProductInRange(int min, int max){
+        return productRepo.getProductInRange(min, max);
     }
 }
