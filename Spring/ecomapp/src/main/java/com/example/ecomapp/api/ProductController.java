@@ -3,14 +3,21 @@ package com.example.ecomapp.api;
 
 import com.example.ecomapp.model.Product;
 import com.example.ecomapp.service.ProductService;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+// Request Mapping accepts any type of request like get, put, post ,delete
 @RequestMapping("api/v1/products")
 public class ProductController {
-    private ProductService service = new ProductService();
+
+    private ProductService service;
+    // Instead of constructor we can use @Autowired
+    public ProductController(ProductService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public List<Product> getAllProducts(){

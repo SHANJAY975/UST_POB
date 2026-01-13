@@ -2,14 +2,21 @@ package com.example.ecomapp.service;
 
 import com.example.ecomapp.model.Product;
 import com.example.ecomapp.repository.ProductRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.ArrayList;
 
-
+@Service // it helps for Dependency injection
 public class ProductService {
 
-    private ProductRepository productRepository = new ProductRepository();
+
+    private ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     public Product saveProduct(Product product){
         productRepository.saveProduct(product);
         return product;
