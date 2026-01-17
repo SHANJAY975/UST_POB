@@ -1,5 +1,14 @@
 spring:
   application:
     name: ecomapp
+  datasource:
+    url: jdbc:mysql://localhost:3306/ust_db
+    username: root
+    password: newpassword
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 server:
   port: 8000
+

@@ -3,7 +3,6 @@ package com.example.ecomapp.api;
 
 import com.example.ecomapp.model.Product;
 import com.example.ecomapp.service.ProductService;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,14 +37,14 @@ public class ProductController {
         return service.saveProduct(product);
     }
 
-    @GetMapping("/product/{name}")
-    public Product getProductByName(@PathVariable String name){
-        return service.getProductByName(name);
-    }
-
-    @GetMapping("/product/{min}/{max}")
-    public  List<Product> getProductInRange(@PathVariable int min, @PathVariable int max){
-        return service.getProductInRange(min, max);
-    }
+//    @GetMapping("/product/{name}")
+//    public Product getProductByName(@PathVariable String name){
+//        return service.getProductByName(name);
+//    }
+//
+//    @GetMapping("/product/{min}/{max}")
+//    public  List<Product> getProductInRange(@PathVariable int min, @PathVariable int max){
+//        return service.getProductInRange(min, max);
+//    }
 
 }
